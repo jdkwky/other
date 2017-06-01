@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html>
+ <head>
+     <title>大江东去</title>
+     <style type="text/css">
+         @keyframes open{
+         	0%{
+         		transform:rotateY(-100deg);
+         	}
+         	50%{
+         		transform: rotateY(-50deg);
+         	}
+         	100%{ transform:rotateY(0deg);
+         	}
+         }
+         body{ background:#f2ede7; }
+         #djdq{width:auto;width:840px;display:table;margin:10px auto;position: relative;perspective: 800px;}
+         .wrap{width:100%;height:300px;transform-style: preserve-3d; position:relative;transform:rotateX(15deg); transform-origin: top; }
+         .wrap >div:first-of-type{left:0;}
+         .wrap >div:first-of-type > span,.wrap span.lastspan{ background:url(img/bamboo-bg.jpg) no-repeat 0 -300px;}
+         .wrap div{ transform-style:preserve-3d;position:absolute;left:30px;top:0; transform-origin:right;transform:rotateY(-100deg);}
+         .wrap div span{float:left; display: block;width:30px;height:300px;background:url(img/bamboo-bg.jpg) no-repeat 0 0;}
+         .wrap .open{ animation: 3.5s open linear; transform: rotateY(0deg);}
+         
+         .text{width:840px;height:300px;position:absolute; top:0;left:0; transform:rotateX(15deg); transform-origin: top; }
+         .t-l{ width:100%;height:100%}
+         .t-l p{text-align: center; width:30px; font-size:20px; font-weight: bold;color:rgba(255,255,255,.6); font-family: "宋体";line-height:36px; text-shadow:-6px 6px 4px rgba(0,0,0,.9);transform-origin: top;transform: rotateX(15deg); }
+         .t-l p:nth-of-type(1){ position:absolute; top:0;left:60px; }
+         .t-l p:nth-of-type(2){ position:absolute; top:0;left:120px; }
+         .t-l p:nth-of-type(3){ position:absolute; top:0;left:180px; }
+         .t-l p:nth-of-type(4){ position:absolute; top:0;left:240px; }
+         .t-l p:nth-of-type(5){ position:absolute; top:0;left:300px; }
+         .t-l p:nth-of-type(6){ position:absolute; top:0;left:360px; }
+         .t-l p:nth-of-type(7){ position:absolute; top:0;left:420px; }
+         .t-l p:nth-of-type(8){ position:absolute; top:0;left:480px; }
+         .t-l p:nth-of-type(9){ position:absolute; top:0;left:540px; }
+         .t-l p:nth-of-type(10){ position:absolute; top:0;left:600px; }
+         .t-l p:nth-of-type(11){ position:absolute; top:0;left:690px; }
+         .t-l p:nth-of-type(12){ position:absolute; top:0px;left:720px;padding-top:100px;}
+         .t-l p span{ display: none; transition:1s;}
+         .t-l .show{ display: inline; }
+         #sea{ position:absolute;top:0;left:0; }
+     </style>
+     <script type="text/javascript">
+         window.onload=function(){
+         	(function(){
+         		var oDivs=document.getElementById("wraps").getElementsByTagName("div");
+	         	var oPs=document.getElementById("text-content").getElementsByTagName("p");
+	         	var oTimmer=null;
+	         	var oDelay=3500;
+	         	var i=0;
+	         	// var oTextTimmer=null;
+	         	// oTimmer=setInterval(function(){
+	         	// 	if(i==oDivs.length){
+	         	// 		clearInterval(oTimmer);
+	         	// 	}else{
+	         	// 		oDivs[i].className="open";
+	         	// 		if((i-2)%2==0&&(i-2)/2>0){
+	         	// 			var oSpans=null;
+	         	// 			oSpans=oPs[((i-2)/2)-1].getElementsByTagName("span");
+	         	// 			var len=0;
+	         	// 			(function(s){
+	         	// 				oTextTimmer=setInterval(function(){
+		         // 					if(len<s.length){
+		         // 						s[len].className="show";
+		         // 						len++;
+		         // 					}else{
+		         // 						clearInterval(oTextTimmer);
+		         // 					}
+
+	         	// 				},200);
+	         	// 			})(oSpans);
+	         	// 		}
+	         	// 		i++;
+	         	// 	}
+	         		
+	         	// },oDelay);
+
+
+
+	    		var oDivOpen=function(){
+	    			if(i<oDivs.length){
+	    				oDivs[i].className="open";
+    					if(i==4){
+	         				var oSpans=null;
+	         				var oSl=0;
+	         				var oPOpen=function(){
+	         					if(oSl<oPs.length){
+		         					var len=0;
+			         				oSpans=oPs[oSl].getElementsByTagName("span");
+			         				(function(s){
+			         					var oSpanOpen=function(){
+			         						if(len<s.length){
+				         						s[len].className="show";
+				         						setTimeout(oSpanOpen,1000);
+				         						len++;
+				         					}
+			         					};
+			         					setTimeout(oSpanOpen,150);
+			         				})(oSpans);
+			         				setTimeout(oPOpen,1000*7+150);
+		         				}
+		         				oSl++;
+	         				};
+	         				setTimeout(oPOpen,100);
+	         			
+         				}
+	    				setTimeout(oDivOpen,oDelay);
+	    				i++;
+	    			}
+	    		};     	
+	    		setTimeout(oDivOpen,100);
+	    	})();
+         	// 控制画布
+         	// 山
+         	(function(){
+         		var oSea=document.getElementById("sea");
+	         	var oGc=oSea.getContext("2d");
+	         	oSea.width=window.screen.availWidth;
+	         	oSea.height=window.screen.availHeight;
+	         	var oDelay=1000;
+	         	var oArrTimmer=null;
+	         	var draw=function(){
+	         		var mGradient=oGc.createLinearGradient(0,300,0,oSea.height);
+		         	mGradient.addColorStop(0,"#dad3cd");
+		         	mGradient.addColorStop(1,"#494f4f");
+		         	oGc.fillStyle=mGradient;
+		         	oGc.beginPath();
+		         	oGc.moveTo(0,300);
+		         	oGc.bezierCurveTo(160,150,100,540,400,oSea.height);
+		         	oGc.lineTo(0,oSea.height);
+		         	oGc.closePath();
+		         	oGc.fill();
+		         	// 海
+		         	oGc.globalCompositeOperation="destination-over";
+		         	var oSeaStartX=0;
+		         	oSeaStartY=500;
+		         	var oSeaGradient=oGc.createLinearGradient(0,oSeaStartY,0,oSea.height);
+		         	oSeaGradient.addColorStop(0,"#bfc3c2");
+		         	oSeaGradient.addColorStop(1,"#dffdfd");
+		         	oGc.fillStyle=oSeaGradient;
+		         	oGc.beginPath();
+		         	oGc.moveTo(oSeaStartX,oSeaStartY);
+		         	oGc.bezierCurveTo(oSea.width/5,oSeaStartY+300,oSea.width,oSeaStartY-100,oSea.width,oSeaStartY);
+		         	oGc.lineTo(oSea.width,oSea.height);
+		         	oGc.lineTo(0,oSea.height);
+		         	oGc.closePath();
+		         	oGc.fill();
+		         	oGc.globalCompositeOperation="source-over";
+		         	var getRandom=function(n){
+		         		return Math.floor(Math.random()*n);
+		         	}
+		         	// 太阳
+		         	oGc.fillStyle="#f9c490";
+		         	oGc.shadowBlur=100;
+		         	oGc.shadowColor="#f9cb9e";
+		            oGc.beginPath();
+		            oGc.arc(oSea.width,0,200,0,2*Math.PI);
+		            oGc.closePath();
+		            oGc.fill();
+	              	var oArrX=new Array();
+		         	var oArrY=new Array();
+		         	var oArrR=new Array();
+		         	var oFlag=0;
+		         	// 气泡
+	         		oGc.fillStyle="#faefdc";
+	         		oGc.globalAlpha=0.4;
+	         		oGc.shadowBlur=300;
+	         		oGc.shadowColor="#fff";
+	         		for(var i=0,len=getRandom(30);i<len;i++){
+		         		oGc.beginPath();
+		         		oGc.arc(500+getRandom(20)*100,700+getRandom(20)*20,getRandom(10)*2+10,0,2*Math.PI);
+		         		oArrX.push(500+getRandom(20)*100);
+		         		oArrY.push(700+getRandom(20)*20);
+		         		oArrR.push(getRandom(10)*2+10);
+		         		oGc.closePath();
+		         	    oGc.fill();
+	         		}
+	         	}
+	         	draw();
+	         	var reDraw=function(){
+	         		oSea.width=window.screen.availWidth;
+		         	oSea.height=window.screen.availHeight;
+		         	draw();
+		         	setTimeout(reDraw,oDelay);
+	         	};
+	         	setTimeout(reDraw,100);
+
+         	})();
+         	
+         }
+     </script>
+ </head>
+ <body>
+     <audio src="杨洪基 - 滚滚长江东逝水.mp3" autoplay="autoplay" controls="controls">
+         
+     </audio>
+     <div id="djdq">
+          <div class="wrap" id="wraps">
+              <div>
+                <span></span>
+	                <div>
+	                    <span></span>
+	                    <div>
+                			<span></span>
+                			<div>
+                			    <span></span>
+                			    <div>
+                			        <span></span>
+                			        <div>
+                			            <span></span>
+                			            <div>
+				                			<span></span>
+				                			<div>
+				                			    <span></span>
+				                			    <div>
+				                			        <span></span>
+				                			        <div>
+				                			            <span></span>
+				                			            <div>
+								                			<span></span>
+								                			<div>
+								                			    <span></span>
+								                			    <div>
+								                			        <span></span>
+								                			        <div>
+								                			            <span></span>
+								                			            <div>
+								                			            	<span></span>
+							                			            		<div>
+						                			            				<span></span>
+						                			            				<div >
+						                			            					<span></span>
+						                			            					<div >
+						                			            						<span></span>
+						                			            						<div>
+												                			            	<span></span>
+											                			            		<div>
+										                			            				<span></span>
+										                			            				<div>
+										                			            					<span></span>
+										                			            					<div>
+										                			            						<span></span>
+										                			            						<div>
+																                			            	<span></span>
+															                			            		<div>
+														                			            				<span></span>
+														                			            				<div>
+														                			            					<span></span>
+														                			            					<div>
+														                			            						<span></span>
+														                			            						<div>
+														                			            						    <span></span>
+														                			            						    <div>
+														                			            						        <span class="lastspan"></span>
+														                			            						    </div>
+														                			            						</div>
+														                			        						</div>
+														                			        					</div>
+														                			        				</div>
+																                			        	</div>
+										                			        						</div>
+										                			        					</div>
+										                			        				</div>
+												                			        	</div>
+						                			        						</div>
+						                			        					</div>
+						                			        				</div>
+								                			        	</div>
+								                			        </div>
+								                			    </div>
+								                			</div>
+								              			</div>
+				                			        </div>
+				                			    </div>
+				                			</div>
+				              			</div>
+                			        </div>
+                			    </div>
+                			</div>
+              			</div>
+	                </div>
+              </div>
+          </div>
+          <div class="text">
+              <div class="t-l" id="text-content">
+	               <p><span>滚</span><span>滚</span><span>长</span><span>江</span><span>东</span><span>逝</span><span>水</span></p>
+	               <p><span>浪</span><span>花</span><span>淘</span><span>尽</span><span>英</span><span>雄</span></p>
+	               <p><span>是</span><span>非</span><span>成</span><span>败</span><span>转</span><span>头</span><span>空</span></p>
+	               <p><span>青</span><span>山</span><span>依</span><span>旧</span><span>在</span></p>
+              	   <p><span>几</span><span>度</span><span>夕</span><span>阳</span><span>红</span></p>
+              	   <p><span>白</span><span>发</span><span>渔</span><span>樵</span><span>江</span><span>渚</span><span>上</span></p>
+              	   <p><span>惯</span><span>看</span><span>秋</span><span>月</span><span>春</span><span>风</span></p>
+              	   <p><span>一</span><span>壶</span><span>浊</span><span>酒</span><span>喜</span><span>相</span><span>逢</span></p>
+              	   <p><span>古</span><span>今</span><span>多</span><span>少</span><span>事</span></p>
+              	   <p><span>都</span><span>付</span><span>笑</span><span>谈</span><span>中</span></p>
+              	   <p><span>临</span><span>江</span><span>仙</span></p>
+              	   <p><span>杨</span><span>慎</span></p>
+              </div>
+
+          </div>
+     </div>
+     <canvas id="sea"></canvas>
+ </body>
+</html>

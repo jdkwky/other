@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html>
+    <head>
+          <title>复杂页面实现</title>
+          <link rel="stylesheet" type="text/css" href="test.css">
+    </head>
+    <body>
+        <!-- 上面搜索顶部栏 -->
+        <div class="top-search"></div>
+        <div id="allcenter">
+            <!-- 左侧边栏 -->
+            <div class="leftside">
+                <div class="people-logo">
+                    <div class="p-o">
+                        <div class="p-i"></div>
+                    </div>
+                    <p>ABC Hello</p>
+                </div>
+                <div class="people-content">
+                    <p><span class="number">110</span><span class="text">收藏</span></p>
+                    <p><span class="number">313</span><span class="text">粉丝</span></p>
+                </div>
+                <div class="left-navi">
+                    <ul>
+                        <li>
+                            <span class="hilight"><i class="iconbg personal-table"></i>个人报表</span>
+                            <dl>
+                                <dd>
+                                    <dl>
+                                        <dt><span><i class="iconbg ifile"></i>文件一<span></dt>
+                                        <dt><span class="hilight"><i class="iconbg ifile hilight-file"></i>文件二</span></dt>
+                                        <dd><span class="hilight"><i class="iconbg idocument"></i>文档一</span></dd>
+                                        <dd><span><i class="iconbg idocument"></i>文档二</span></dd>
+                                        <dt><span><i class="iconbg ifile"></i>文件三</span></dt>
+                                    </dl>
+                                </dd>
+                            </dl>
+                        </li>
+                        <li><span><i class="iconbg personal-save"></i>个人收藏</span></li>
+                        <li><span><i class="iconbg share"></i>我的分享</span></li>
+                        <li><span><i class="iconbg pics"></i>图库</span></li>
+                        <li><span><i class="iconbg record"></i>成长记录</span></li>
+                        <li><span><i class="iconbg message"></i>账户信息</span></li>
+                    </ul>
+                </div>
+            </div>
+            <!-- 右边内容区 -->
+            <div class="rightcontent">
+            <!-- 右边导航区域 -->
+                <div class="right-navi">
+                    <p><span>C站</span><i>/</i><span>个人报表</span><i>/</i><span>文件二</span><i>/</i><span class="current-directory">文档一</span></p>
+                </div>
+                <!-- 右边主要内容区域 -->
+                <div class="right-point">
+                    <!-- 搜索查询框 -->
+                    <div class="searchmenu">
+                        <form action="#" method="post">
+                            <div class="menu">
+                                <span>查询项</span>
+                                <select class="searchtip">
+                                    <option>第一项</option>
+                                </select>
+                            </div>
+                            <div class="menu">
+                                <span>买方</span><select class="searchman"><option>小A</option></select>
+                                <br />
+                                <span>卖方</span><select class="searchman"><option>小B</option></select>
+                                <a class="menuchange" href="javascript:void(0)" ></a>
+                            </div>
+                            <div class="menu extramargin">
+                                <span>日期</span><input class="datatime" type="text" value="2017-05-16"/>
+                               	<span>总耗时</span><select class="totaltime"><option>8</option></select>
+                               	<br />
+                               	<span>人数</span><select class="numbers"><option>10</option></select>
+                               	<span>成交项</span><select class="totalcount"><option>10项</option></select>
+                            </div>
+                            
+                            <input class="searchbtn searchposition" type="submit" value="搜索" />
+                        </form>
+                    </div>
+                    <!-- 搜索查询框结束 -->
+                    <!-- 单价趋势开始 -->
+                    <div class="price">
+                        <div class="left"><span><</span></div>
+                        
+                        <div class="center-range">
+                            <ul>
+                                <li><a><span class="time">10:00 am</span><p><span class="moneyicon"></span><span class="money">1200</span></p></a></li>
+                                <li><a><span class="time">11:00 am</span><p><span class="moneyicon"></span><span class="money">1200</span></p></a></li>
+                                <li><a><span class="time">12:00 am</span><p><span class="moneyicon"></span><span class="money">1200</span></p></a></li>
+                                <li><a><span class="time">13:00 am</span><p><span class="moneyicon"></span><span class="money">1200</span></p></a></li>
+                                <li><a><span class="time">14:00 am</span><p><span class="moneyicon"></span><span class="money">1200</span></p></a></li>
+                                <li><a><span class="time">15:00 am</span><p><span class="moneyicon"></span><span class="money">1200</span></p></a></li>
+                                <li><a><span class="time">16:00 am</span><p><span class="moneyicon"></span><span class="money">1200</span></p></a></li>
+                            </ul>
+                        </div>
+                        <div class="right"><span>></span></div>
+                        <div class="history-price">
+                            <a href="#"></a>
+                            <img src="img/history.gif" alt="历史价格查询"/>
+                            <span>历史查询</span>
+                        </div>
+                    </div>
+                    <!-- 单价趋势结束 -->
+                    <!-- 月份统计开始 -->
+                    <div class="statistics">
+                        <p>2016年4月份统计</p>
+                        <div class="trade-number">
+                            <div class="trade-number-content tnc1">
+                                <p class="tnc-text">
+                                    <span class="tnc-number">133311</span>
+                                    <span class="tnc-word">成交量</span>
+                                </p>
+                                <div class="tnc-rec tncr1"></div>
+                            </div>
+                        </div>
+                        <div class="trade-number">
+                            <div class="trade-number-content tnc2">
+                                <p class="tnc-text">
+                                    <span class="tnc-number">133311</span>
+                                    <span class="tnc-word">成交量</span>
+                                </p>
+                                <div class="tnc-rec tncr2"></div>
+                            </div>
+                        </div>
+                        <div class="trade-number">
+                            <div class="trade-number-content tnc3">
+                                <p class="tnc-text">
+                                    <span class="tnc-number">133311</span>
+                                    <span class="tnc-word">成交量</span>
+                                </p>
+                                <div class="tnc-rec tncr3"></div>
+                            </div>
+                        </div>
+                        <div class="trade-number">
+                            <div class="trade-number-content tnc4">
+                                <p class="tnc-text">
+                                    <span class="tnc-number">133311</span>
+                                    <span class="tnc-word">成交量</span>
+                                </p>
+                                <div class="tnc-rec tncr4"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 月份统计结束 -->
+                    <!-- 项目开始 -->
+                    <div class="item">
+                        <div class="item-left">
+                            <div class="item-border item-left-content">
+                                <p class="item-title">第一组项目</p>
+                                <div class="item-table">
+                                    <ul>
+                                        <li><a href="#itc1">项目一</a></li>
+                                        <li><a href="#itc2">项目一</a></li>
+                                        <li><a href="#itc3">项目一</a></li>
+                                        <li><a href="#itc4">项目一</a></li>
+                                        <li><a href="#itc5">项目一</a></li>
+                                    </ul>
+                                    <div class="itc">
+                                        <div class="item-table-content" id="itc1">
+                                            <table>
+                                                <tr><td><a href="#">购买材料一</a></td><td><a href="#">购买材料一</a></td><td><a href="#">购买材料一</a></td><td><a href="#">购买材料一</a></td></tr>
+                                                <tr><td><a href="#">购买材料二</a></td><td><a href="#">购买材料二</a></td><td><a href="#">购买材料二</a></td><td><a href="#">购买材料二</a></td></tr>
+                                                <tr><td><a href="#">购买材料四</a></td><td><a href="#">购买材料四</a></td><td><a href="#">购买材料四</a></td><td><a href="#">购买材料四</a></td></tr>
+                                                <tr><td><a href="#">购买材料六</a></td><td><a href="#">购买材料六</a></td><td><a href="#">购买材料六</a></td><td><a href="#">购买材料六</a></td></tr>
+                                                <tr><td><a href="#">购买材料十三</a></td><td><a href="#">购买材料十三</a></td><td><a href="#">购买材料十三</a></td><td><a href="#">购买材料十三</a></td></tr>
+                                                <tr><td><a href="#">购买材料二十</a></td><td><a href="#">购买材料二十</a></td><td><a href="#">购买材料二十</a></td><td><a href="#">购买材料二十</a></td></tr>
+                                            </table>
+                                        </div>
+                                        <div class="item-table-content" id="itc2">
+                                            <table>
+                                                <tr><td><a href="#">购买材料二</a></td><td><a href="#">购买材料二</a></td><td><a href="#">购买材料一</a></td><td><a href="#">购买材料一</a></td></tr>
+                                                <tr><td><a href="#">购买材料二</a></td><td><a href="#">购买材料二</a></td><td><a href="#">购买材料二</a></td><td><a href="#">购买材料二</a></td></tr>
+                                                <tr><td><a href="#">购买材料四</a></td><td><a href="#">购买材料四</a></td><td><a href="#">购买材料四</a></td><td><a href="#">购买材料四</a></td></tr>
+                                                <tr><td><a href="#">购买材料六</a></td><td><a href="#">购买材料六</a></td><td><a href="#">购买材料六</a></td><td><a href="#">购买材料六</a></td></tr>
+                                                <tr><td><a href="#">购买材料十三</a></td><td><a href="#">购买材料十三</a></td><td><a href="#">购买材料十三</a></td><td><a href="#">购买材料十三</a></td></tr>
+                                                <tr><td><a href="#">购买材料二十</a></td><td><a href="#">购买材料二十</a></td><td><a href="#">购买材料二十</a></td><td><a href="#">购买材料二十</a></td></tr>
+                                            </table>
+                                        </div>
+                                        <div class="item-table-content" id="itc3">
+                                            <table>
+                                                <tr><td><a href="#">购买材料三</a></td><td><a href="#">购买材料一</a></td><td><a href="#">购买材料一</a></td><td><a href="#">购买材料一</a></td></tr>
+                                                <tr><td><a href="#">购买材料二</a></td><td><a href="#">购买材料二</a></td><td><a href="#">购买材料二</a></td><td><a href="#">购买材料二</a></td></tr>
+                                                <tr><td><a href="#">购买材料四</a></td><td><a href="#">购买材料四</a></td><td><a href="#">购买材料四</a></td><td><a href="#">购买材料四</a></td></tr>
+                                                <tr><td><a href="#">购买材料六</a></td><td><a href="#">购买材料六</a></td><td><a href="#">购买材料六</a></td><td><a href="#">购买材料六</a></td></tr>
+                                                <tr><td><a href="#">购买材料十三</a></td><td><a href="#">购买材料十三</a></td><td><a href="#">购买材料十三</a></td><td><a href="#">购买材料十三</a></td></tr>
+                                                <tr><td><a href="#">购买材料二十</a></td><td><a href="#">购买材料二十</a></td><td><a href="#">购买材料二十</a></td><td><a href="#">购买材料二十</a></td></tr>
+                                            </table>
+                                        </div>
+                                        <div class="item-table-content" id="itc4">
+                                            <table>
+                                                <tr><td><a href="#">购买材料四</a></td><td><a href="#">购买材料一</a></td><td><a href="#">购买材料一</a></td><td><a href="#">购买材料一</a></td></tr>
+                                                <tr><td><a href="#">购买材料二</a></td><td><a href="#">购买材料二</a></td><td><a href="#">购买材料二</a></td><td><a href="#">购买材料二</a></td></tr>
+                                                <tr><td><a href="#">购买材料四</a></td><td><a href="#">购买材料四</a></td><td><a href="#">购买材料四</a></td><td><a href="#">购买材料四</a></td></tr>
+                                                <tr><td><a href="#">购买材料六</a></td><td><a href="#">购买材料六</a></td><td><a href="#">购买材料六</a></td><td><a href="#">购买材料六</a></td></tr>
+                                                <tr><td><a href="#">购买材料十三</a></td><td><a href="#">购买材料十三</a></td><td><a href="#">购买材料十三</a></td><td><a href="#">购买材料十三</a></td></tr>
+                                                <tr><td><a href="#">购买材料二十</a></td><td><a href="#">购买材料二十</a></td><td><a href="#">购买材料二十</a></td><td><a href="#">购买材料二十</a></td></tr>
+                                            </table>
+                                        </div>
+                                        <div class="item-table-content" id="itc5">
+                                            <table>
+                                                <tr><td><a href="#">购买材料五</a></td><td><a href="#">购买材料一</a></td><td><a href="#">购买材料一</a></td><td><a href="#">购买材料一</a></td></tr>
+                                                <tr><td><a href="#">购买材料二</a></td><td><a href="#">购买材料二</a></td><td><a href="#">购买材料二</a></td><td><a href="#">购买材料二</a></td></tr>
+                                                <tr><td><a href="#">购买材料四</a></td><td><a href="#">购买材料四</a></td><td><a href="#">购买材料四</a></td><td><a href="#">购买材料四</a></td></tr>
+                                                <tr><td><a href="#">购买材料六</a></td><td><a href="#">购买材料六</a></td><td><a href="#">购买材料六</a></td><td><a href="#">购买材料六</a></td></tr>
+                                                <tr><td><a href="#">购买材料十三</a></td><td><a href="#">购买材料十三</a></td><td><a href="#">购买材料十三</a></td><td><a href="#">购买材料十三</a></td></tr>
+                                                <tr><td><a href="#">购买材料二十</a></td><td><a href="#">购买材料二十</a></td><td><a href="#">购买材料二十</a></td><td><a href="#">购买材料二十</a></td></tr>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item-right">
+                            <div class="item-border item-right-content">
+                                <p class="item-title">第一组项目</p>
+                                <h1>
+                                    <span class="text-top">标题</span><span class="text-bottom">项目报表三</span>
+                                </h1>
+                                <div class="introduce">
+                                    <p>
+                                        <span class="text-top">价格</span><span class="text-bottom">$ 158</span>
+                                    </p>
+                                    <p class="liner"></p>
+                                    <p>
+                                        <span class="text-top">负责人</span><span class="text-bottom">小A</span>
+                                    </p>
+                                </div>
+                                <div class="detail">
+                                    <p class="text-top">详情描述</p>
+                                    <p class="text-bottom">该项目目前负责人是......</p>
+                                </div>
+                                <form action="#" method="post">
+                                    <input class="check-box" id="cb" type="checkbox" /><label for="cb"></label><span>遵守保密协议</span><input type="submit" class="searchbtn scp" value="搜索" />
+                                </form>
+                            </div>
+                        </div>
+                        <div class="calendar" >
+                            <div class="item-border calendar-content">
+                                <p class="item-title">日历</p>
+                                <div class="calendar-main">
+                                    <div class="calendar-search">
+                                      <select class="year"><option>2016年</option></select>
+                                      <select class="month"><option>4月</option></select>
+                                      <select class="markdata"><option>标注日期</option></select>
+                                      <input class="returnnow" type="button" value="返回今天" />
+                                      <table>
+                                          <tr class="week"><td>一</td><td>二</td><td>三</td><td>四</td><td>五</td><td>六</td><td>七</td></tr>
+                                          <tr><td></td><td></td><td></td><td></td>
+                                              <td><a href="#"><span class="top-num">1</span><span class="bottom-de bdr">愚人节</span></a></td>
+                                              <td><a href="#"><span class="top-num bdr">2</span><span class="bottom-de ">廿五</span></a></td>
+                                              <td><a href="#"><span class="top-num bdr">3</span><span class="bottom-de">廿六</span></a></td>
+                                          </tr>
+                                          <tr>
+                                              <td><a href="#"><span class="top-num">4</span><span class="bottom-de">廿七</span></a></td>
+                                              <td><a href="#"><span class="top-num">5</span><span class="bottom-de bdr">清明</span></a></td>
+                                              <td><a href="#"><span class="top-num">6</span><span class="bottom-de">廿九</span></a></td>
+                                              <td><a href="#"><span class="top-num">7</span><span class="bottom-de">三月</span></a></td>
+                                              <td><a href="#"><span class="top-num">8</span><span class="bottom-de">初二</span></a></td>
+                                              <td><a class="tdb" href="#"><span class="top-num bdr">9</span><span class="bottom-de">初三</span></a></td>
+                                              <td><a href="#"><span class="top-num bdr">10</span><span class="bottom-de">初四</span></a></td>
+                                          </tr>
+                                          <tr>
+                                              <td><a href="#"><span class="top-num">11</span><span class="bottom-de">初五</span></a></td>
+                                              <td><a href="#"><span class="top-num">12</span><span class="bottom-de">初六</span></a></td>
+                                              <td><a  class="tdb" href="#"><span class="top-num">13</span><span class="bottom-de">初七</span></a></td>
+                                              <td><a href="#"><span class="top-num">14</span><span class="bottom-de">初八</span></a></td>
+                                              <td><a href="#"><span class="top-num">15</span><span class="bottom-de">初九</span></a></td>
+                                              <td><a href="#"><span class="top-num bdr">16</span><span class="bottom-de">初十</span></a></td>
+                                              <td><a href="#"><span class="top-num bdr">17</span><span class="bottom-de">十一</span></a></td>
+                                          </tr>
+                                          <tr>
+                                              <td><a href="#"><span class="top-num">18</span><span class="bottom-de">十二</span></a></td>
+                                              <td><a class="tdb" href="#"><span class="top-num">19</span><span class="bottom-de">十三</span></a></td>
+                                              <td><a href="#"><span class="top-num">20</span><span class="bottom-de">十四</span></a></td>
+                                              <td><a href="#"><span class="top-num">21</span><span class="bottom-de">十五</span></a></td>
+                                              <td><a href="#"><span class="top-num">22</span><span class="bottom-de">十六</span></a></td>
+                                              <td><a href="#"><span class="top-num bdr">23</span><span class="bottom-de">十七</span></a></td>
+                                              <td><a href="#"><span class="top-num bdr">24</span><span class="bottom-de">十八</span></a></td>
+                                          </tr>
+                                          <tr>
+                                              <td><a href="#"><span class="top-num">25</span><span class="bottom-de">十九</span></a></td>
+                                              <td><a href="#"><span class="top-num">26</span><span class="bottom-de">廿十</span></a></td>
+                                              <td><a href="#"><span class="top-num">27</span><span class="bottom-de">廿一</span></a></td>
+                                              <td><a href="#"><span class="top-num">28</span><span class="bottom-de">廿二</span></a></td>
+                                              <td><a href="#"><span class="top-num">29</span><span class="bottom-de">廿三</span></a></td>
+                                              <td><a href="#"><span class="top-num bdr">30</span><span class="bottom-de">廿四</span></a></td>
+                                              <td></td>
+                                          </tr>
+                                      </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="rank">
+                            <div class="item-border rank-content">
+                                <p class="item-title">汽车行业品牌榜</p>
+                                <table>
+                                    <tr><th class="rank-num">排名</th><th class="rank-brand">品牌</th><th>搜索指数</th></tr>
+                                    <tr><a href="#"><td>1</td><td>大众</td><td><p class="rank-com">48912001</p> <p class="rank1"><span class="top1 p1"></span></p></td></a></tr>
+                                    <tr><a href="#"><td>2</td><td>丰田</td><td><p class="rank-com">29307333</p> <p class="rank1"><span class="top2 p2"></span></p></td></a></tr>
+                                    <tr><a href="#"><td>3</td><td>奥迪</td><td><p class="rank-com">23139070</p> <p class="rank1"><span class="top3 p3"></span></p></td></a></tr>
+                                    <tr><a href="#"><td>4</td><td>本田</td><td><p class="rank-com">22885564</p> <p class="rank1"><span class="t p4"></span></p></td></a></tr>
+                                    <tr><a href="#"><td>5</td><td>福特</td><td><p class="rank-com">22324792</p> <p class="rank1"><span class="t p5"></span></p></td></a></tr>
+                                    <tr><a href="#"><td>6</td><td>宝马</td><td><p class="rank-com">21444077</p> <p class="rank1"><span class="t p6"></span></p></td></a></tr>
+                                    <tr><a href="#"><td>7</td><td>现代</td><td><p class="rank-com">20114969</p> <p class="rank1"><span class="t p7"></span></p></td></a></tr>
+                                    <tr><a href="#"><td>8</td><td>起亚</td><td><p class="rank-com">19251680</p> <p class="rank1"><span class="t p8"></span></p></td></a></tr>
+                                    <tr><a href="#"><td>9</td><td>奔驰</td><td><p class="rank-com">19172837</p> <p class="rank1"><span class="t p9"></span></p></td></a></tr>
+                                    <tr><a href="#"><td>10</td><td>别克</td><td><p class="rank-com">18544027</p> <p class="rank1"><span class="t p10"></span></p></td></a></tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 项目结束 -->
+                </div>
+
+            </div>
+
+        </div>
+    </body>
+</html>
