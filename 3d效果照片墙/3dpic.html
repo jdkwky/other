@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>3d效果图片展示</title>
+    <style id="css" type="text/css">
+        body,ul,ol{ margin:0;padding:0;border:0;}
+        #wrap{ position:relative;width:800px; margin:300px auto;}
+		#wrap ul{ list-style: none;height:360px;perspective: 800px;}
+		#wrap ul li{ height:100%;width:40px;float: left; transform-style: preserve-3d;position:relative; transform-origin: center center -180px;}
+		#wrap ul li a{display: block; width:100%;height:100%;float: left;}
+		#wrap ul li a:nth-of-type(1){background:url("img/1.jpg");position:absolute;top:0;left:0;transform:rotateX(0deg);}
+		#wrap ul li a:nth-of-type(2){background:url("img/2.jpg");position:absolute;top:360px;left:0; transform:rotateX(-90deg); transform-origin:top;}
+		#wrap ul li a:nth-of-type(3){background:url("img/3.jpg");position:absolute;top:0;left:0; transform:translateZ(-360px) rotateX(-180deg); }
+		#wrap ul li a:nth-of-type(4){background:url("img/4.jpg");position:absolute;top:-360px;left:0;transform-origin:bottom; transform: rotateX(90deg);}
+		#wrap ul li span{display: block;width:360px;height:360px;background:rgba(0,0,0,.5); position: absolute;}
+		#wrap ul li span:nth-of-type(1){top:0;left:0;transform-origin:left;transform: rotateY(90deg);}
+		#wrap ul li span:nth-of-type(2){top:0;right:0;transform-origin: right;transform:rotateY(-90deg); }
+		#wrap ol{ height:20px;list-style: none; margin-top:100px; float: right;}
+		#wrap ol li{ width: 20px;height:20px;border-radius: 50%;background:#000;color:red; font:16px/20px "微软雅黑";float:left; text-align: center; margin:4px;}
+		#wrap ol li:hover{ cursor: pointer; }
+		#wrap .active{ background:red; color:#fff;}
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <ul id="list">
+            
+        </ul>
+        <ol id="abtn">
+            <li class="active">1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+        </ol>
+    </div>
+    <script type="text/javascript">
+        window.onload=function(){
+			var oLists=document.getElementById("list");
+			var oCss=document.getElementById("css");
+			var oBtn=document.getElementById("abtn");
+			var oLis=oLists.children;
+			var oInnerList="",oCssInner="";
+			var zIndex=0;
+			var len=800/40;
+			var iNow=0;
+			for(var i=0;i<len;i++){
+				i>len/2?zIndex--:zIndex++;
+				oInnerList+='<li><a href="#"></a><a href="#"></a><a href="#"></a><a href="#"></a><span></span><span></span></li>';
+				oCssInner+="#wrap ul li:nth-of-type("+(i+1)+") a{ background-position:-"+i*40+"px,0}";
+				oCssInner+="#wrap ul li:nth-of-type("+(i+1)+"){ z-index:"+zIndex+";}";
+			}
+			oLists.innerHTML=oInnerList;
+			oCss.innerHTML+=oCssInner;
+			var btns=oBtn.getElementsByTagName("li");
+			for( var i=0,l=btns.length;i<l;i++){
+				(function(a){
+					btns[a].onclick=function(){
+						for(var b=0,le=oLis.length;b<le;b++){
+							oLis[b].style.transition="0.5s "+b*60+"ms";
+							oLis[b].style.transform="rotateX("+a*90+"deg)";
+						}
+						this.className="active";
+						btns[iNow].className="";
+						iNow=a;
+					}
+				})(i);
+			}
+		}
+    </script>
+</body>
+</html>
