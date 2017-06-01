@@ -49,35 +49,6 @@
 	         	var oTimmer=null;
 	         	var oDelay=3500;
 	         	var i=0;
-	         	// var oTextTimmer=null;
-	         	// oTimmer=setInterval(function(){
-	         	// 	if(i==oDivs.length){
-	         	// 		clearInterval(oTimmer);
-	         	// 	}else{
-	         	// 		oDivs[i].className="open";
-	         	// 		if((i-2)%2==0&&(i-2)/2>0){
-	         	// 			var oSpans=null;
-	         	// 			oSpans=oPs[((i-2)/2)-1].getElementsByTagName("span");
-	         	// 			var len=0;
-	         	// 			(function(s){
-	         	// 				oTextTimmer=setInterval(function(){
-		         // 					if(len<s.length){
-		         // 						s[len].className="show";
-		         // 						len++;
-		         // 					}else{
-		         // 						clearInterval(oTextTimmer);
-		         // 					}
-
-	         	// 				},200);
-	         	// 			})(oSpans);
-	         	// 		}
-	         	// 		i++;
-	         	// 	}
-	         		
-	         	// },oDelay);
-
-
-
 	    		var oDivOpen=function(){
 	    			if(i<oDivs.length){
 	    				oDivs[i].className="open";
@@ -116,8 +87,8 @@
          	(function(){
          		var oSea=document.getElementById("sea");
 	         	var oGc=oSea.getContext("2d");
-	         	oSea.width=window.screen.availWidth;
-	         	oSea.height=window.screen.availHeight;
+	         	oSea.width=document.body.clientWidth;
+	         	oSea.height=document.body.clientHeight; 
 	         	var oDelay=1000;
 	         	var oArrTimmer=null;
 	         	var draw=function(){
