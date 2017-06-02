@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>js单元测试</title>
+
+  <link rel="shortcut icon" type="image/png" href="../../lib/jasmine-2.3.4/jasmine_favicon.png">
+  <link rel="stylesheet" href="../../lib/jasmine-2.3.4/jasmine.css">
+  <script src="../../js/jquery-1.7.1.js"></script>
+  <script src="../../lib/jasmine-2.3.4/jasmine.js"></script>
+  <script src="../../lib/jasmine-2.3.4/jasmine-html.js"></script>
+  <script src="../../lib/jasmine-2.3.4/boot.js"></script>
+  <script src="../../js/require.js"></script>
+  
+  <script src="../../lib/jasmine-2.3.4/jasmine-jquery.js"></script>
+  <script src="pkg/index/m3.ui_v20151029125954.js"></script>
+  <style type="text/css">
+    .testKeyWords{ display: none;}
+  </style>
+</head>
+
+
+<body>
+   <!-- 搜索框 -->
+   <input type="text" class="testKeyWords" id="keyWords1" />
+   <textarea class="testKeyWords" id="getWords"></textarea>
+   <input name="Phone" id="Phone" class="testKeyWords" step="0" type="tel" maxlength="11" placeholder="留下手机号以便我们随时与您取得联系"
+                            msg="请填写手机号#请填写正确的手机号" pattern2="^[\s\S]+$#^(13|14|15|18)\d{9}$">
+<script type="text/javascript">
+   
+            try{var ____json4fe = {"catentry":[],"locallist":[{"dispid":"1","name":"北京","listname":"bj"}],"modules":"list"};}catch(e){};
+    ____json4fe = {"catentry":{"dispid":"0","name":"sou","listname":"sou"},"locallist":[{"dispid":"1","name":"北京","listname":"bj"}],"modules":"list"};
+</script>
+<script type="text/javascript">
+
+</script>
+
+  <script type="text/javascript">
+    
+    describe('js搜索单元测试', function() {
+      var desStr;
+      
+      beforeEach(function(done) {
+        
+        require(['pkg/index/index_common_homepage'], function(index_common_homepage) {
+          console.log('pkg/index index_common_homepage called');
+          // win.getData();
+          var str;
+          $("#keyWords1").val("文慧园");
+          var key = $("#keyWords1").val();
+          console.log(key);
+          var testdata = win.getData(key);
+          console.log(testdata);
+          var callback = testdata.toString().substring(testdata.length - 12, testdata.length);
+          console.log("callback 截取：" + callback);
+          var script = document.createElement("SCRIPT");
+          script.src = testdata;
+          document.body.appendChild(script);
+          window[callback] = function(data) {
+            console.log("获取的data" + data);
+            if (data && data.w && data.w.length) {
+              var arr = data.w;
+              for (var i = 0; i < arr.length; i++) {
+                if (!arr[i]) {
+                  continue;
+                }
+                str += arr[i].k + " ";
+
+              }
+              str = str.toString().substring(9, str.length);
+              str = key + " " + str;
+              desStr=str;
+              $("#getWords").val(str);
+              console.log(str+"===");
+            }
+            console.log($("#getWords").val());
+            expect($('#keyWords1').val()).not.toBe('');
+            expect($('#getWords').val()).not.toBe('');
+            done();
+          }
+        });
+        console.log("before function");
+        
+
+      });
+      it('文慧园测试用例通过',function(){
+        console.log("it function");
+        var str='文慧园 文慧园 文慧园 文慧园北路 文慧园北 文慧园56号公寓 文慧园公寓 文慧园号公寓 文慧园一居 文慧园租房 文慧园小区 文慧园北路4号院 文慧园15号公寓 ';
+        expect($('#getWords').val()).toEqual(str);
+      });
+      it('手机信息填写用例通过',function(){
+        $("#Phone").val("18311305528");
+        var result=validate($("#Phone"));
+        expect(result).toBe(true);
+      });
+    });
+    
+  </script>
+
+</body>
+</html>
